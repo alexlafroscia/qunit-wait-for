@@ -36,6 +36,11 @@
       ]
     ]
   },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
+  },
   "volta": {
     "node": "12.16.1",
     "yarn": "1.22.4"

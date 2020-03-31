@@ -13,10 +13,10 @@ yarn add -D qunit-wait-for
 and install the helper in your JavaScript code.
 
 ```javascript
-import QUnit from 'qunit';
-import { installWaitFor } from 'qunit-wait-for';
+import QUnit from "qunit";
+import { installWaitFor } from "qunit-wait-for";
 
-installWaitFor(QUnit)
+installWaitFor(QUnit);
 ```
 
 If you're using Ember, the right place for that snippet is your `tests/test-helper.js`.
@@ -29,7 +29,7 @@ To use it, pass a callback to `assert.waitFor` and within in place your normal a
 
 ```javascript
 await assert.waitFor(() => {
-  assert.dom('[data-test-my-element]').exists();
+  assert.dom("[data-test-my-element]").exists();
 });
 ```
 
@@ -37,7 +37,7 @@ The resulting promise resolve when either the condition is met or the timeout is
 
 ## Prior Art
 
-* [Converging on a Condition in QUnit](https://alexlafroscia.com/qunit-assert-converge-on/)
-    A blog post I wrote a while ago, describing a similar API that was not based on using a normal assertion to test that the condition has been met
-* [`waitFor` from `@testing-library/dom`](https://testing-library.com/docs/dom-testing-library/api-async#waitfor)
-    Inspired the API of this library, where you also pass a callback that performs an otherwise normal test assertion
+- [Converging on a Condition in QUnit](https://alexlafroscia.com/qunit-assert-converge-on/)
+  A blog post I wrote a while ago, describing a similar API that was not based on using a normal assertion to test that the condition has been met
+- [`waitFor` from `@testing-library/dom`](https://testing-library.com/docs/dom-testing-library/api-async#waitfor)
+  Inspired the API of this library, where you also pass a callback that performs an otherwise normal test assertion
