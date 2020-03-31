@@ -1,0 +1,6 @@
+# Pika Output
+pkg/
+
+# Dependencies
+node_modules/
+
