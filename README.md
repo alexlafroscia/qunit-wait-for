@@ -1,5 +1,7 @@
 # `qunit-wait-for`
 
+![Verify](https://github.com/alexlafroscia/qunit-wait-for/workflows/Verify/badge.svg)
+
 > Wait for a QUnit Assertion
 
 ## Installation
