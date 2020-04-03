@@ -16,17 +16,21 @@ export function installWaitFor(QUnit: QUnit) {
       { timeout = 1000 }: Options = { timeout: undefined }
     ) {
       const originalPushResult = this.pushResult;
-      let lastResult: Result;
+      let lastResults: Result[];
 
       this.pushResult = (result: Result) => {
-        lastResult = result;
+        lastResults.push(result);
       };
 
       try {
         await waitUntil(() => {
+          // Reset to capture the most recent round of results
+          lastResults = [];
+
           assertionCallback();
 
-          return lastResult.result;
+          // `waitUntil` only "passes" if _all_ assertions were successful
+          return lastResults.every(({ result }) => result);
         }, timeout);
       } catch (e) {
         if (!(e instanceof TimeoutError)) {
@@ -36,7 +40,9 @@ export function installWaitFor(QUnit: QUnit) {
         this.pushResult = originalPushResult;
       }
 
-      this.pushResult(lastResult);
+      for (const result of lastResults) {
+        this.pushResult(result);
+      }
     },
   });
 }

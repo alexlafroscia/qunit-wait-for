@@ -8,11 +8,21 @@ installVerify(QUnit, td);
 installWaitFor(QUnit);
 
 test("it can wait for a condition to be successful", async function (assert) {
-  const stub = td.when(td.function()()).thenReturn(1, 2);
+  const return2After2 = td.when(td.function()()).thenReturn(1, 2);
+  const return2After3 = td.when(td.function()()).thenReturn(1, 1, 2);
+  const callCounter = td.function();
 
   await assert.waitFor(() => {
-    assert.equal(stub(), 2);
+    assert.equal(return2After2(), 2);
+    assert.equal(return2After3(), 2);
+    callCounter();
   });
+
+  assert.verify(
+    callCounter(),
+    { times: 3 },
+    "Took 3 calls to get everything to pass"
+  );
 });
 
 test("it throws a non-timeout error", async function (assert) {
