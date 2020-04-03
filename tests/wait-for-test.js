@@ -4,7 +4,7 @@ const installVerify = require("testdouble-qunit");
 const { installWaitFor } = require("../pkg");
 const { test } = QUnit;
 
-installVerify(QUnit);
+installVerify(QUnit, td);
 installWaitFor(QUnit);
 
 test("it can wait for a condition to be successful", async function (assert) {
