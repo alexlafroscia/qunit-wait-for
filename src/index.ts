@@ -49,9 +49,6 @@ export function installWaitFor(QUnit: QUnit) {
 
 declare global {
   interface Assert {
-    waitFor(
-      callback: AssertionCallback,
-      options?: Options
-    ): () => Promise<void>;
+    waitFor(callback: AssertionCallback, options?: Options): Promise<void>;
   }
 }
