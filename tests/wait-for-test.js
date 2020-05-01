@@ -58,3 +58,13 @@ test("it can time out while waiting", async function (assert) {
     { result: false, actual: 1, expected: 2, message: undefined },
   ]);
 });
+
+test("it can handle an async assertion callback", async function (assert) {
+  const stub = td
+    .when(td.function()())
+    .thenReturn(Promise.resolve(1), Promise.resolve(2));
+
+  await assert.waitFor(async () => {
+    assert.equal(await stub(), 2);
+  });
+});

@@ -18,13 +18,13 @@ export function waitUntil(callback: () => unknown, timeout: number) {
         interval = MAX_TIMEOUT;
       }
 
-      futureTick(function () {
+      futureTick(async function () {
         time += interval;
 
         let value: unknown;
 
         try {
-          value = callback();
+          value = await callback();
         } catch (error) {
           reject(error);
         }

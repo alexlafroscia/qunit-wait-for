@@ -1,6 +1,6 @@
 import { TimeoutError, waitUntil } from "./wait-until";
 
-type AssertionCallback = () => void;
+type AssertionCallback = () => Promise<void> | void;
 type Options = {
   timeout: number;
 };
@@ -23,11 +23,11 @@ export function installWaitFor(QUnit: QUnit) {
       };
 
       try {
-        await waitUntil(() => {
+        await waitUntil(async () => {
           // Reset to capture the most recent round of results
           lastResults = [];
 
-          assertionCallback();
+          await assertionCallback();
 
           // `waitUntil` only "passes" if _all_ assertions were successful
           return lastResults.every(({ result }) => result);
