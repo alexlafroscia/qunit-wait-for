@@ -68,3 +68,19 @@ test("it can handle an async assertion callback", async function (assert) {
     assert.equal(await stub(), 2);
   });
 });
+
+test("it does not disrupt other assertions from completing", async function (assert) {
+  assert.expect(2);
+
+  let result = false;
+  setTimeout(function () {
+    result = true;
+
+    // An assertion outside `waitUntil` that is complete while `waitFor` is pending
+    assert.ok(true);
+  }, 10);
+
+  await assert.waitFor(() => {
+    assert.ok(result);
+  });
+});
