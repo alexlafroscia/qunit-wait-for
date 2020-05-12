@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.2.0...v1.2.1) (2020-05-12)
+
+### Bug Fixes
+
+- avoid stubbing `pushResult` for longer than necessary ([fa4156b](https://github.com/alexlafroscia/qunit-wait-for/commit/fa4156b570980dc380b1eb33420dbcf9b7e266a0)), closes [#16](https://github.com/alexlafroscia/qunit-wait-for/issues/16)
+
 ## [1.2.0](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.1.1...v1.2.0) (2020-05-01)
 
 ### Features
