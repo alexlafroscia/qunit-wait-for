@@ -25,7 +25,9 @@ test("it can wait for a condition to be successful", async function (assert) {
 });
 
 test("it throws a non-timeout error", async function (assert) {
-  assert.expect(1);
+  assert.expect(2);
+
+  const originalPushResult = assert.pushResult;
 
   const e = new Error("Some Error");
   const stub = td.when(td.function()()).thenThrow(e);
@@ -37,6 +39,12 @@ test("it throws a non-timeout error", async function (assert) {
   } catch (error) {
     assert.equal(error, e);
   }
+
+  assert.equal(
+    originalPushResult,
+    assert.pushResult,
+    "Restored the `pushResult` implementation if an error occurs"
+  );
 });
 
 test("it can time out while waiting", async function (assert) {
@@ -66,5 +74,21 @@ test("it can handle an async assertion callback", async function (assert) {
 
   await assert.waitFor(async () => {
     assert.equal(await stub(), 2);
+  });
+});
+
+test("it does not disrupt other assertions from completing", async function (assert) {
+  assert.expect(2);
+
+  let result = false;
+  setTimeout(function () {
+    result = true;
+
+    // An assertion outside `waitUntil` that is complete while `waitFor` is pending
+    assert.ok(true);
+  }, 10);
+
+  await assert.waitFor(() => {
+    assert.ok(result);
   });
 });

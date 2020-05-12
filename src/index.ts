@@ -15,19 +15,26 @@ export function installWaitFor(QUnit: QUnit) {
       assertionCallback: AssertionCallback,
       { timeout = 1000 }: Options = { timeout: undefined }
     ) {
-      const originalPushResult = this.pushResult;
+      let originalPushResult = this.pushResult;
       let lastResults: Result[];
-
-      this.pushResult = (result: Result) => {
-        lastResults.push(result);
-      };
 
       try {
         await waitUntil(async () => {
           // Reset to capture the most recent round of results
           lastResults = [];
 
-          await assertionCallback();
+          // Stub out `pushResult` as late as possible
+          originalPushResult = this.pushResult;
+          this.pushResult = (result: Result) => {
+            lastResults.push(result);
+          };
+
+          try {
+            await assertionCallback();
+          } finally {
+            // Restore original `pushResult` implementation right after callback
+            this.pushResult = originalPushResult;
+          }
 
           // `waitUntil` only "passes" if _all_ assertions were successful
           return lastResults.every(({ result }) => result);
@@ -36,8 +43,6 @@ export function installWaitFor(QUnit: QUnit) {
         if (!(e instanceof TimeoutError)) {
           throw e;
         }
-      } finally {
-        this.pushResult = originalPushResult;
       }
 
       for (const result of lastResults) {
