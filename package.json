@@ -4,6 +4,10 @@
   "description": "Wait for a QUnit assertion",
   "author": "Alex LaFroscia <alex@lafroscia.com>",
   "license": "MIT",
+  "keywords": [
+    "qunit",
+    "qunit-plugin"
+  ],
   "scripts": {
     "build": "pika build",
     "fmt": "prettier --write .",
