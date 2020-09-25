@@ -942,9 +942,9 @@
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
 "@types/qunit@^2.9.0":
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.9.4.tgz#653ba9bfc0ef40c98578edb7375c0aef1085bcc4"
-  integrity sha512-dywRDyPbgMLeY6zKpZZrkhAl5fgJYuM9HQyURmx0PkE7X5rT6yxEGJt+ZV7DUFDd/MzyXXPzONqoAYziOQVN6Q==
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.9.5.tgz#2f938870dac68e9464463ee36cdfb29538f4a2da"
+  integrity sha512-CdIcVLscYdlw1eLdHMF1Mw5uf/RbZ13JfM2nA0LNoJvonE91XFNu7njh1GcC1IFDKV1VTnyStQ1H8yCwk63hbw==
 
 JSONStream@^1.0.4:
   version "1.3.5"
