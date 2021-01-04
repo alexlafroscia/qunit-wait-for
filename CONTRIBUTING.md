@@ -27,7 +27,6 @@ git push --follow-tags origin master
 
 # Build NPM package and push to registry
 yarn build
-cd pkg
 npm publish
 ```
 

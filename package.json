@@ -4,43 +4,32 @@
   "description": "Wait for a QUnit assertion",
   "author": "Alex LaFroscia <alex@lafroscia.com>",
   "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "exports": "dist/index.modern.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
   "keywords": [
     "qunit",
     "qunit-plugin"
   ],
   "scripts": {
-    "build": "pika build",
+    "build": "microbundle",
     "fmt": "prettier --write .",
     "test": "qunit tests",
     "release": "standard-version"
   },
   "devDependencies": {
-    "@pika/pack": "^0.5.0",
-    "@pika/plugin-build-node": "^0.9.2",
-    "@pika/plugin-build-web": "^0.9.2",
-    "@pika/plugin-ts-standard-pkg": "^0.9.2",
     "@types/qunit": "^2.9.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
+    "microbundle": "^0.13.0",
     "prettier": "^2.0.2",
     "qunit": "^2.9.3",
     "standard-version": "^9.0.0",
     "testdouble": "^3.13.1",
     "testdouble-qunit": "^2.1.1",
     "typescript": "^4.0.2"
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-ts-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-web"
-      ]
-    ]
   },
   "standard-version": {
     "scripts": {
