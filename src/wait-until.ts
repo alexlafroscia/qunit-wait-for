@@ -8,7 +8,7 @@ export function waitUntil(callback: () => unknown, timeout: number) {
     "Condition not met within timeout"
   );
 
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     let time = 0;
 
     // eslint-disable-next-line require-jsdoc
