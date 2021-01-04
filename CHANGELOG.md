@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.2.3...v2.0.0) (2021-01-04)
+
+### ⚠ BREAKING CHANGES
+
+- The package output is slightly different now, with a different configuration of the `package.json` pointers to different builds of the library. Because of this, the bundler consuming this library might pull in something different than before. In case that ends up being a "breaking" change, this commit is being marked as such, though in reality this should be safe for any consumers.
+
+### Bug Fixes
+
+- avoid deprecated QUnit extension API ([95ddfa4](https://github.com/alexlafroscia/qunit-wait-for/commit/95ddfa4b8f5688f1c59caf0f21a7a59d8ce23a91))
+
+- replace Pika with Microbundle ([0004147](https://github.com/alexlafroscia/qunit-wait-for/commit/0004147fdd5aef2dff299ffd16ea6b456b8223e7))
+
 ### [1.2.3](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.2.2...v1.2.3) (2020-08-03)
 
 ### [1.2.2](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.2.1...v1.2.2) (2020-08-03)
