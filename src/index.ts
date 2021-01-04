@@ -10,7 +10,7 @@ interface Result {
 }
 
 export function installWaitFor(QUnit: QUnit) {
-  QUnit.extend(QUnit.assert, {
+  Object.assign(QUnit.assert, {
     async waitFor(
       assertionCallback: AssertionCallback,
       { timeout = 1000 }: Options = { timeout: undefined }
