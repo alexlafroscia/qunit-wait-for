@@ -1,6 +1,6 @@
 const td = require("testdouble");
 const installVerify = require("testdouble-qunit");
-const { installWaitFor } = require("../pkg");
+const { installWaitFor } = require("../dist");
 const { test } = QUnit;
 
 installVerify(QUnit, td);

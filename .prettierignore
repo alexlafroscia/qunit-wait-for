@@ -1,6 +1,5 @@
-# Pika Output
-pkg/
+# Build Output
+dist/
 
 # Dependencies
 node_modules/
-
