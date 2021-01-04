@@ -8,6 +8,19 @@ This package uses [Volta](https://volta.sh) to manage the Node and Yarn versions
 
 Each commit should follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) pattern, so that we can use tools that automatically generate a `CHANGELOG` for us.
 
+## Running Tests
+
+Since this package is an integration for QUnit, the tests are written using that library. Tests and a formatting check are both run using GitHub Actions for any commit pushed to GitHub.
+
+To run the tests locally, you can run
+
+```bash
+yarn build
+yarn test
+```
+
+Note that the tests are run against the compiled output, so the package _must_ be built before performing the tests.
+
 ## Publishing a Version
 
 This project uses `standard-version` to leverage the Git history to find updates since the last version, determine the next version, and generate the `CHANGELOG` for us.
