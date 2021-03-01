@@ -24,7 +24,7 @@ test("it can wait for a condition to be successful", async function (assert) {
   );
 });
 
-test("it throws a non-timeout error", async function (assert) {
+test("it re-throws an exception that is generated on every assertion invocation", async function (assert) {
   assert.expect(2);
 
   const originalPushResult = assert.pushResult;
@@ -45,6 +45,19 @@ test("it throws a non-timeout error", async function (assert) {
     assert.pushResult,
     "Restored the `pushResult` implementation if an error occurs"
   );
+});
+
+test("it re-tries an assertion that throws an exception temporarily", async function (assert) {
+  const stub = td.function();
+  td.when(stub(1)).thenThrow(new Error("Error thrown the first time"));
+  td.when(stub(2)).thenReturn(true);
+
+  let count = 0;
+
+  await assert.waitFor(() => {
+    count++;
+    assert.ok(stub(count));
+  });
 });
 
 test("it can time out while waiting", async function (assert) {
