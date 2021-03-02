@@ -19,7 +19,7 @@
     "test": "qunit tests",
     "release": "standard-version",
     "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
+    "prepublishOnly": "microbundle && pinst --disable",
     "postpublish": "pinst --enable"
   },
   "devDependencies": {
