@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.0...v2.0.1) (2021-03-02)
+
+### Bug Fixes
+
+- re-try assertions that only temporarily throw an exception ([cebe239](https://github.com/alexlafroscia/qunit-wait-for/commit/cebe239b902e338630945691f42bd906a8380f05))
+
 ## [2.0.0](https://github.com/alexlafroscia/qunit-wait-for/compare/v1.2.3...v2.0.0) (2021-01-04)
 
 ### ⚠ BREAKING CHANGES
