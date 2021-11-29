@@ -12,6 +12,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "qunit",
     "qunit-plugin"
