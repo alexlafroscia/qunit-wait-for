@@ -42,7 +42,7 @@
     "*.{ts,json,md,yml}": "prettier --write"
   },
   "volta": {
-    "node": "12.16.1",
+    "node": "16.13.0",
     "yarn": "1.22.4"
   }
 }
