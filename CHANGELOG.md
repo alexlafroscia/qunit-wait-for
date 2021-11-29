@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.1...v2.0.2) (2021-11-29)
+
+### Bug Fixes
+
+- only publish `dist` files ([a1911c3](https://github.com/alexlafroscia/qunit-wait-for/commit/a1911c39121caaf8af6296771d73bd605d65ddb5))
+- update export map ([c20134b](https://github.com/alexlafroscia/qunit-wait-for/commit/c20134b906d3545a01b04a27ea60493ae64dd176))
+
 ### [2.0.1](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.0...v2.0.1) (2021-03-02)
 
 ### Bug Fixes
