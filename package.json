@@ -4,11 +4,14 @@
   "description": "Wait for a QUnit assertion",
   "author": "Alex LaFroscia <alex@lafroscia.com>",
   "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "exports": "dist/index.modern.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
+  "source": "./src/index.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "keywords": [
     "qunit",
     "qunit-plugin"
