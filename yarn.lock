@@ -1022,9 +1022,9 @@
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
 "@types/qunit@^2.9.0":
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.19.0.tgz#49d3e6b7898f62fc02acb75318d26d8768e32202"
-  integrity sha512-wn2I086PtmQYcQjH4dAJI9vf7VOCxvN/z1aMotamliCmSBtm7t2yr5y8GE1sXbt+pMGq92wTWc1Cbt+YaH/OLQ==
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.19.1.tgz#e29a57e26bebdb12f68746b6b4a208a32a06033b"
+  integrity sha512-1ZCjSdq0OKdglZc5qlj8Fv80y7xzVyU2pCckLJf6q2oo0g6BHQmIbQ9TDceqUgelAlXUV9h2EgTCa/YIhxkohA==
 
 "@types/resolve@1.17.1":
   version "1.17.1"
