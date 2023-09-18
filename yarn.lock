@@ -2580,6 +2580,13 @@ is-core-module@^2.1.0:
   dependencies:
     has "^1.0.3"
 
+is-core-module@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.13.0.tgz#bb52aa6e2cbd49a30c2ba68c42bf3435ba6072db"
+  integrity sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==
+  dependencies:
+    has "^1.0.3"
+
 is-core-module@^2.2.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.8.0.tgz#0321336c3d0925e497fd97f5d95cb114a5ccd548"
@@ -2591,13 +2598,6 @@ is-core-module@^2.8.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.8.1.tgz#f59fdfca701d5879d0a6b100a40aa1560ce27211"
   integrity sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==
-  dependencies:
-    has "^1.0.3"
-
-is-core-module@^2.9.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.11.0.tgz#ad4cb3e3863e814523c96f3f58d26cc570ff0144"
-  integrity sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==
   dependencies:
     has "^1.0.3"
 
@@ -3949,13 +3949,13 @@ q@^1.1.2, q@^1.5.1:
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-quibble@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.7.0.tgz#fd7f7f03ed4c2682b55523433af5e66bc26bde9f"
-  integrity sha512-uiqtYLo6p6vWR/G3Ltsg0NU1xw43RcNGadYP+d/DF3zLQTyOt8uC7L2mmcJ97au1QE1YdmCD+HVIIq/RGtkbWA==
+quibble@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/quibble/-/quibble-0.8.0.tgz#63dd4a31083508e46e00542453b1ddfa7a61cd5d"
+  integrity sha512-hFN7qy9BP6H7gU5LtOCMKu1PeVGKO1jV+avf62zbKJI/tmvkNUYqA5NTxR89WUgsxzS0EACsuT11PNOFxPUBvg==
   dependencies:
     lodash "^4.17.21"
-    resolve "^1.22.1"
+    resolve "^1.22.4"
 
 quick-lru@^4.0.1:
   version "4.0.1"
@@ -4183,12 +4183,12 @@ resolve@^1.20.0:
     is-core-module "^2.2.0"
     path-parse "^1.0.6"
 
-resolve@^1.22.1:
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.1.tgz#27cb2ebb53f91abb49470a928bba7558066ac177"
-  integrity sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==
+resolve@^1.22.4:
+  version "1.22.6"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.6.tgz#dd209739eca3aef739c626fea1b4f3c506195362"
+  integrity sha512-njhxM7mV12JfufShqGy3Rz8j11RPdLy4xi15UurGJeoHLfJpVXKdh3ueuOqbYUcDZnffr6X739JBo5LzyahEsw==
   dependencies:
-    is-core-module "^2.9.0"
+    is-core-module "^2.13.0"
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
@@ -4747,12 +4747,12 @@ testdouble-qunit@^3.0.2:
   integrity sha512-HcDEL9V/XLMWW8gQ+T6BvCIde+6bFW4nXI3FSjcDJYRSSi8KNIbm1tcTediBIIXjsJ7ZtyavpkSlMew8g766gA==
 
 testdouble@^3.13.1:
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.18.0.tgz#850a04d00045a52cd08c99cb69aea6845fe86587"
-  integrity sha512-awRay/WxNHYz0SJrjvvg1xE4QQkbKgWFN1VNhhb132JSO2FSWUW4cebUtD0HjWWwrvpN3uFsVeaUhwpmVlzlkg==
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/testdouble/-/testdouble-3.19.0.tgz#8e7f23e70ffcafb175ea73a8478b0bc286572633"
+  integrity sha512-iavgMMYdgnAyB7EGv2prhgtqnvhSI+K/EVPySqW4MwFjEiLJkiLBnWqlCP09ikB1Q2LargMb8W6otImp8cnLdw==
   dependencies:
     lodash "^4.17.21"
-    quibble "^0.7.0"
+    quibble "^0.8.0"
     stringify-object-es5 "^2.5.0"
     theredoc "^1.0.0"
 
