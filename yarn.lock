@@ -4083,9 +4083,9 @@ quick-lru@^4.0.1:
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
 qunit@^2.9.3:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.21.0.tgz#c3d35adb1c9df8176459665f2daf33170c0f8662"
-  integrity sha512-kJJ+uzx5xDWk0oRrbOZ3zsm+imPULE58ZMIrNl+3POZl4a1k6VXj2E4OiqTmZ9j6hh9egE3kNgnAti9Q+BG6Yw==
+  version "2.21.1"
+  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.21.1.tgz#b2199f08983efc9ad35c4d48ff6e49d12fb8274d"
+  integrity sha512-SMA8IBZamI9MyVB4dShGpn6+X6plO8mIyfZTQ815XBvv/nVMeUj+yxsw8SgZVnrMlrAvTziJkmjOhaDwkNMHWQ==
   dependencies:
     commander "7.2.0"
     node-watch "0.7.3"
