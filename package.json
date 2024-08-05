@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/qunit": "^2.9.0",
     "husky": "^7.0.1",
-    "lint-staged": "^12.1.2",
+    "lint-staged": "^15.2.8",
     "microbundle": "^0.15.0",
     "prettier": "^2.0.2",
     "qunit": "^2.9.3",
