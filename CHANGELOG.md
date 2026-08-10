@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.3...v2.0.4) (2026-08-10)
+
+### Bug Fixes
+
+- point to the right file name in `dist` ([8107e8b](https://github.com/alexlafroscia/qunit-wait-for/commit/8107e8b))
+
+### [2.0.3](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.2...v2.0.3) (2026-08-10)
+
+### Bug Fixes
+
+- add `types` declarations to `package.json` ([7292de0](https://github.com/alexlafroscia/qunit-wait-for/commit/7292de0)), closes [#357](https://github.com/alexlafroscia/qunit-wait-for/issues/357)
+
 ### [2.0.2](https://github.com/alexlafroscia/qunit-wait-for/compare/v2.0.1...v2.0.2) (2021-11-29)
 
 ### Bug Fixes
