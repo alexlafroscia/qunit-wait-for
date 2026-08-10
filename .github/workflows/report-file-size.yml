@@ -7,25 +7,23 @@ jobs:
     name: Build Master
     runs-on: ubuntu-latest
     steps:
-      # Shared Setup
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: master
-      - uses: volta-cli/action@v1
+      - uses: volta-cli/action@v4
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v4
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      # TODO: Leverage cache to avoid building `master` more than once
       - run: yarn install
       - run: yarn build
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: master-dist
           path: dist
@@ -34,14 +32,13 @@ jobs:
     name: Build PR
     runs-on: ubuntu-latest
     steps:
-      # Shared Setup
-      - uses: actions/checkout@v2
-      - uses: volta-cli/action@v1
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v4
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -49,7 +46,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn install
       - run: yarn build
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: pr-dist
           path: dist
@@ -59,35 +56,33 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_master, build_pr]
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4
         with:
           name: master-dist
           path: master-dist
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4
         with:
           name: pr-dist
           path: pr-dist
       - name: Get size of Master
         id: master-size
         run: |
-          echo "::set-output name=base::$(du -b master-dist/index.js | cut -f1)"
-          echo "::set-output name=modern::$(du -b master-dist/index.modern.js | cut -f1)"
-          echo "::set-output name=module::$(du -b master-dist/index.module.js | cut -f1)"
-          echo "::set-output name=umd::$(du -b master-dist/index.umd.js | cut -f1)"
+          echo "base=$(du -b master-dist/index.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "modern=$(du -b master-dist/index.modern.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "module=$(du -b master-dist/index.module.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "umd=$(du -b master-dist/index.umd.js | cut -f1)" >> $GITHUB_OUTPUT
       - name: Get size of PR
         id: pr-size
         run: |
-          echo "::set-output name=base::$(du -b pr-dist/index.js | cut -f1)"
-          echo "::set-output name=modern::$(du -b pr-dist/index.modern.js | cut -f1)"
-          echo "::set-output name=module::$(du -b pr-dist/index.module.js | cut -f1)"
-          echo "::set-output name=umd::$(du -b pr-dist/index.umd.js | cut -f1)"
+          echo "base=$(du -b pr-dist/index.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "modern=$(du -b pr-dist/index.modern.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "module=$(du -b pr-dist/index.module.js | cut -f1)" >> $GITHUB_OUTPUT
+          echo "umd=$(du -b pr-dist/index.umd.js | cut -f1)" >> $GITHUB_OUTPUT
       - name: Post Comment
         if: steps.master-size.outputs.base != steps.pr-size.outputs.base
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
-          msg: |
+          message: |
             | Build | Base | Modern | Module | UMD |
             | :-- | :-- | :-- | :-- | :-- |
             | `master` | ${{ steps.master-size.outputs.base }} B | ${{ steps.master-size.outputs.modern }} B | ${{ steps.master-size.outputs.module }} B | ${{ steps.master-size.outputs.umd }} B |
