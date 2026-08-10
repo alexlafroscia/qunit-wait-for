@@ -1,6 +1,6 @@
 {
   "name": "qunit-wait-for",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Wait for a QUnit assertion",
   "author": "Alex LaFroscia <alex@lafroscia.com>",
   "license": "MIT",
