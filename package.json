@@ -5,7 +5,9 @@
   "author": "Alex LaFroscia <alex@lafroscia.com>",
   "license": "MIT",
   "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
+    "types": "./dist/index.d.ts",
     "require": "./dist/index.js",
     "default": "./dist/index.modern.js"
   },
